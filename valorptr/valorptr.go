@@ -1,10 +1,12 @@
 package valorptr
 
+// int64, stringのフィールドをもつ構造体.
 type T1 struct {
 	f0 int64
 	f1 string
 }
 
+//int64 * 5, string * 5のフィールドをもつ構造体.
 type T2 struct {
 	f0 int64
 	f1 string
@@ -23,6 +25,7 @@ var str string
 
 //go:noinline
 func ValueFunc1(t1 T1) {
+	// 関数の処理は、引数の構造体のフィールドをpackageに定義した変数に代入するだけ
 	num = t1.f0
 	str = t1.f1
 }
